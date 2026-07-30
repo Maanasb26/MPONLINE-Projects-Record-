@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DocuMind AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ===================== -->
+    <!-- Sidebar -->
+    <!-- ===================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                📄
+            </div>
+
+            <div>
+
+                <h2>DocuMind AI</h2>
+
+                <p>RAG Document Assistant</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-card">
+
+            <h3>Upload Document</h3>
+
+            <p>
+                Upload a PDF and chat with your document.
+            </p>
+
+            <input
+                    type="file"
+                    id="pdf"
+                    accept=".pdf">
+
+            <button id="upload-btn">
+
+                Upload PDF
+
+            </button>
+
+        </div>
+
+
+        <div class="sidebar-card status-card">
+
+            <h3>Status</h3>
+
+            <div id="upload-status">
+
+                No document uploaded
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-footer">
+
+            <div class="feature">
+
+                ⚡ Powered by Gemini
+
+            </div>
+
+            <div class="feature">
+
+                🧠 FAISS Vector Search
+
+            </div>
+
+            <div class="feature">
+
+                📚 Retrieval Augmented Generation
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ===================== -->
+    <!-- Main Area -->
+    <!-- ===================== -->
+
+    <main class="main-content">
+
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    AI Document Chat
+
+                </h1>
+
+                <p>
+
+                    Ask anything from your uploaded document.
+
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- Chat -->
+
+
+        <section
+                id="chat"
+                class="chat-container">
+
+
+            <div class="message bot">
+
+                <div class="avatar">
+
+                    🤖
+
+                </div>
+
+                <div class="bubble">
+
+                    <h4>
+
+                        Welcome to DocuMind AI
+
+                    </h4>
+
+                    <p>
+
+                        Upload a PDF from the sidebar.
+
+                    </p>
+
+                    <p>
+
+                        Once indexing is complete, simply ask questions
+                        and I'll answer using only your document.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- Input -->
+
+
+        <footer class="chat-input-area">
+
+
+            <div class="input-wrapper">
+
+                <input
+
+                        type="text"
+
+                        id="question"
+
+                        placeholder="Ask something about your document..."
+
+                        autocomplete="off">
+
+                <button id="send-btn">
+
+                    Send
+
+                </button>
+
+            </div>
+
+            <div class="footer-text">
+
+                DocuMind AI may generate incorrect answers if the uploaded
+                document does not contain the requested information.
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>
